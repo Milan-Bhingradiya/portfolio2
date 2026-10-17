@@ -38,15 +38,24 @@ export default function Hero({
 
   return (
     <header className="pt-10 pb-12 md:pt-14 md:pb-16">
-      <div className="w-36 shrink-0 sm:w-40">
-        <Image
-          src="/images/profile-sketch.png"
-          alt="Pencil sketch portrait of Milan Bhingradiya"
-          width={1080}
-          height={1080}
-          priority
-          className="portrait-img aspect-square w-full rounded-full object-cover"
-        />
+      <div className="group w-36 shrink-0 sm:w-40">
+        <div className="relative aspect-square">
+          <Image
+            src="/images/normal.png"
+            alt="Pencil sketch portrait of Milan Bhingradiya"
+            width={1080}
+            height={1080}
+            priority
+            className="portrait-img absolute inset-0 aspect-square w-full rounded-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+          />
+          <Image
+            src="/images/sunglasses.png"
+            alt="Pencil sketch portrait of Milan Bhingradiya wearing dark sunglasses"
+            width={1080}
+            height={1080}
+            className="portrait-img absolute inset-0 aspect-square w-full rounded-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          />
+        </div>
       </div>
 
       <h1 className="mt-5 text-xl font-bold tracking-tight">

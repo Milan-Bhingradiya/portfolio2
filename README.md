@@ -23,6 +23,19 @@ ADMIN_PASSWORD=<choose-a-strong-password>
 Open `/admin`, enter the admin password, edit profile / projects / experience /
 skills / stats, then **Save all**. The homepage updates immediately.
 
+The admin panel also has an **Analytics** section: total visits, unique
+visitors, average time per visit, visits today, a 14-day chart, device / browser
+/ page / country breakdowns, and a table of recent visits (date, time, page,
+device, browser, OS, location, referrer, time spent).
+
+## Analytics (self-hosted, free forever)
+
+Every page view is recorded in your MongoDB (`visits` collection): page,
+referrer, device, browser, OS, country/city (via free ip-api.com lookup),
+and time spent (beaconed when the tab hides/closes). The footer shows a public
+counter: total visits and average time per visit. No third-party service,
+no 30-day limit — your data stays in your database.
+
 ## Run locally
 
 ```bash

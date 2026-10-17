@@ -1,4 +1,5 @@
 import type { SiteContentData } from "@/lib/content";
+import VisitCounter from "./VisitCounter";
 
 export default function Footer({
   profile,
@@ -43,6 +44,7 @@ export default function Footer({
       <p className="mt-10 text-center text-xs text-zinc-400 dark:text-zinc-600">
         © {new Date().getFullYear()} {profile.name}. Built with Next.js.
       </p>
+      <VisitCounter />
     </footer>
   );
 }

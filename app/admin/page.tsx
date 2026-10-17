@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { SiteContentData } from "@/lib/content";
 
 const inputCls =
@@ -62,6 +63,11 @@ export default function AdminPage() {
       const res = await fetch("/api/content");
       if (!res.ok) throw new Error();
       setContent(await res.json());
+      try {
+        sessionStorage.setItem("admin_pw", password);
+      } catch {
+        /* storage unavailable */
+      }
       setUnlocked(true);
     } catch {
       setStatus("Could not load content.");
@@ -122,7 +128,20 @@ export default function AdminPage() {
   return (
     <main className="mx-auto max-w-3xl space-y-6 px-6 py-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Edit portfolio</h1>
+        <div className="flex items-center gap-4">
+          <h1 className="text-2xl font-bold">Edit portfolio</h1>
+          <nav className="flex gap-1 rounded-lg border border-zinc-200 p-1 dark:border-zinc-800">
+            <span className="rounded-md bg-zinc-900 px-3 py-1 text-sm font-medium text-white dark:bg-zinc-100 dark:text-zinc-900">
+              Content
+            </span>
+            <Link
+              href="/admin/analytics"
+              className="rounded-md px-3 py-1 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            >
+              Analytics
+            </Link>
+          </nav>
+        </div>
         <button onClick={save} className={btnPrimary}>
           Save all
         </button>

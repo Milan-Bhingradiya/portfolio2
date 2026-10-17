@@ -23,15 +23,14 @@ body {
 
 /* Portrait sketch presentation */
 .portrait-img {
-  /* Light mode: off-white paper blends into the page */
+  /* Light mode: paper blends into the page */
   mix-blend-mode: multiply;
   filter: grayscale(1) contrast(1.08);
 }
 
 .dark .portrait-img {
-  /* Dark mode: inverted chalk sketch */
-  mix-blend-mode: screen;
-  filter: grayscale(1) invert(1) contrast(1.06);
+  /* Dark mode: show the photo as-is with its white background */
+  mix-blend-mode: normal;
 }
 
 

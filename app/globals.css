@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #18181b;
+  color: #fafafa;
+}
+
+.dark ::selection {
+  background: #fafafa;
+  color: #18181b;
+}
+
+/* Portrait sketch presentation */
+.portrait-img {
+  /* Light mode: off-white paper blends into the page */
+  mix-blend-mode: multiply;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.dark .portrait-img {
+  /* Dark mode: inverted chalk sketch */
+  mix-blend-mode: screen;
+  filter: grayscale(1) invert(1) contrast(1.06);
+}
+
+
+
